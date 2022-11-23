@@ -103,12 +103,55 @@
 //     console.log(false)
 // }
 
-const num1 = 22;
-const num2 = 46;
-const num3 = 68;
+// const num1 = 22;
+// const num2 = 46;
+// const num3 = 68;
 
-if(num1 % 2 !== 0 || num2 % 2 !== 0 || num3 % 2 !== 0){
-    console.log(true)
+// if(num1 % 2 !== 0 || num2 % 2 !== 0 || num3 % 2 !== 0){
+//     console.log(true)
+// } else {
+//     console.log(false)
+// }
+
+// const productCost = 6;
+// const salePrice = 12;
+
+// if(productCost > 0 && salePrice > 0){
+//     const totalProductCost = productCost * 1.2;
+//     const finalProfit = (salePrice - totalProductCost) * 1000;
+//     console.log(finalProfit);
+// } else {
+//     console.log("Os valores não podem ser negativos.");
+// }
+
+
+let aliquotINSS;
+let aliquotIR;
+
+const grossSalary = 3500.00;
+
+if (grossSalary <= 1556.94) {
+  aliquotINSS = grossSalary * 0.08;
+} else if (grossSalary <= 2594.92) {
+  aliquotINSS = grossSalary * 0.09;
+} else if (grossSalary <= 5189.82) {
+  aliquotINSS = grossSalary * 0.11;
 } else {
-    console.log(false)
+  aliquotINSS = 570.88;
 }
+
+const baseSalary = grossSalary - aliquotINSS;
+
+if (baseSalary <= 1903.98) {
+  aliquotIR = 0;
+} else if (baseSalary <= 2826.65) {
+  aliquotIR = (baseSalary * 0.075) - 142.80;
+} else if (baseSalary <= 3751.05) {
+  aliquotIR = (baseSalary * 0.15) - 354.80;
+} else if (baseSalary <= 4664.68) {
+  aliquotIR = (baseSalary * 0.225) - 636.13;
+} else {
+  aliquotIR = (baseSalary * 0.275) - 869.36;
+};
+
+console.log("Salário: " + (baseSalary - aliquotIR));
